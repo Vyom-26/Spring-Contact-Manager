@@ -1,13 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"
+      th:replace="~{base :: parent(~{::#content}, ~{::#title})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title id="title">
+        About Page
+    </title>
 </head>
 <body>
-<h1>
-    This is about page
-</h1>
+<div id="content">
+    <h1>
+        Welcome to the about page
+    </h1>
+    <p>Lorem ipsum</p>
+</div>
 </body>
 </html>

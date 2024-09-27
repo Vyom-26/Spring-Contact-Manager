@@ -1,14 +1,36 @@
-<div th:fragment="parent(x,y)">
-    <h1>
-        This is parent fragment
-    </h1>
-    <p>
-        This is the testing for the parent fragment
-    </p>
-    <h1>
-        The value of x is : <span th:text="${x}"></span>
-    </h1>
-    <h1>
-        The value of y is : <span th:text="${y}"></span>
-    </h1>
+<!doctype html>
+<html
+        lang="en"
+        th:fragment="parent(content, title)"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-th-replace="${title}">SCM</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+</head>
+<body>
+<!--common header-->
+<ul class="p-4">
+    <li>
+        <a data-th-href="@{'/home'}">Home</a>
+    </li>
+    <li>
+        <a data-th-href="@{'/about'}">About</a>
+    </li>
+    <li>
+        <a data-th-href="@{'/services'}">Services</a>
+    </li>
+</ul>
+
+<!--main content-->
+<div class="p-4">
+    <section data-th-replace="${content}"></section>
 </div>
+
+<footer class="p-4">Footer : Learn with Code with Durgesh</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+</body>
+</html>
